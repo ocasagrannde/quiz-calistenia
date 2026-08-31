@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Analytics — Painel de Comando</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* ═══════════════════════════════════════════
+       RESET & VARIABLES
+    ═══════════════════════════════════════════ */
+    :root {
+      --bg-primary: #06080f;
+      --bg-secondary: #0c1120;
+      --bg-card: rgba(15, 23, 42, 0.65);
+      --bg-card-hover: rgba(20, 30, 55, 0.8);
+      --border: rgba(99, 102, 241, 0.12);
+      --border-glow: rgba(99, 102, 241, 0.25);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.15);
+      --accent-glow: rgba(99, 102, 241, 0.4);
+      --success: #10b981;
+      --success-soft: rgba(16, 185, 129, 0.12);
+      --warning: #f59e0b;
+      --warning-soft: rgba(245, 158, 11, 0.12);
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.12);
+      --pink: #ec4899;
+      --pink-soft: rgba(236, 72, 153, 0.12);
+      --cyan: #06b6d4;
+      --cyan-soft: rgba(6, 182, 212, 0.12);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-xs: 6px;
+      --shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated Grid Background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(236, 72, 153, 0.05), transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════ */
+    .app-layout {
+      display: flex;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── Sidebar ─── */
+    .sidebar {
+      width: 260px;
+      background: rgba(8, 12, 24, 0.95);
+      backdrop-filter: blur(20px);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; bottom: 0; left: 0;
+      z-index: 100;
+      transition: var(--transition);
+    }
+
+    .sidebar-brand {
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem;
+      box-shadow: 0 0 20px var(--accent-glow);
+      animation: iconPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes iconPulse {
+      0%, 100% { box-shadow: 0 0 15px var(--accent-glow); }
+      50% { box-shadow: 0 0 25px var(--accent-glow), 0 0 40px rgba(99, 102, 241, 0.15); }
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #f1f5f9, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sidebar-nav { padding: 1rem 0.75rem; flex-grow: 1; display: flex; flex-direction: column; gap: 4px; }
+
+    .nav-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.75rem 0.85rem 0.35rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.65rem 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-item:hover { background: rgba(99, 102, 241, 0.08); color: var(--text-primary); }
+
+    .nav-item.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.2);
+    }
+
+    .nav-item.active::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 15%; bottom: 15%;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .nav-icon { font-size: 1rem; width: 22px; text-align: center; }
+
+    .nav-badge {
+      margin-left: auto;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .sidebar-footer {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .sidebar-footer-text { font-size: 0.72rem; color: var(--text-muted); line-height: 1.3; }
+
+    /* ─── Main Container ─── */
+    .main-container {
+      margin-left: 260px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ─── Top Bar ─── */
+    .topbar {
+      background: rgba(8, 12, 24, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky; top: 0;
+      z-index: 50;
+    }
+
+    .topbar-left h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .topbar-left p { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+    .topbar-right { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* ─── Period Filter ─── */
+    .period-filter {
+      display: flex;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .period-btn {
+      padding: 6px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .period-btn:hover {
+      color: var(--text-secondary);
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    .period-btn.active {
+      color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: inset 0 -2px 0 var(--accent);
+    }
+
+    .period-btn + .period-btn {
+      border-left: 1px solid var(--border);
+    }
+
+    .period-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .live-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 5px 12px;
+      background: var(--success-soft);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .live-dot {
+      width: 7px; height: 7px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: livePulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes livePulse {
+      0% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.85); }
+    }
+
+    .btn-action {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 7px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-action:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-action.loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .last-update { font-size: 0.7rem; color: var(--text-muted); }
+
+    /* ═══════════════════════════════════════════
+       CONTENT
+    ═══════════════════════════════════════════ */
+    .content { padding: 1.75rem 2rem 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* ─── KPI Cards ─── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--kpi-color, var(--accent));
+      opacity: 0.6;
+      transition: var(--transition);
+    }
+
+    .kpi-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--border-glow);
+    }
+
+    .kpi-card:hover::before { opacity: 1; height: 3px; }
+
+    .kpi-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .kpi-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .kpi-icon-circle {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .kpi-value {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .kpi-subtitle {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .kpi-change {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .kpi-change.up { background: var(--success-soft); color: var(--success); }
+    .kpi-change.down { background: var(--danger-soft); color: var(--danger); }
+
+    /* ─── Section Grid ─── */
+    .grid-cols-2 {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.25rem;
+    }
+
+    /* ─── Card Panel ─── */
+    .panel {
+      background: var(--bg-card);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .panel:hover { border-color: var(--border-glow); }
+
+    .panel-head {
+      padding: 1.15rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .panel-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .panel-subtitle { font-size: 0.72rem; color: var(--text-muted); }
+
+    .panel-body { padding: 1.25rem 1.5rem; }
+
+    /* ─── Funnel ─── */
+    .funnel-steps { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .funnel-step {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .funnel-step:hover {
+      background: rgba(99, 102, 241, 0.05);
+      border-color: var(--border);
+    }
+
+    .funnel-step-info { display: flex; flex-direction: column; gap: 6px; }
+
+    .funnel-step-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .funnel-bar-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .funnel-bar-value {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--pink));
+      border-radius: 9999px;
+      transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .funnel-bar-value::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15));
+      border-radius: inherit;
+    }
+
+    .funnel-step-stats {
+      text-align: right;
+      min-width: 90px;
+    }
+
+    .funnel-count {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .funnel-pct {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .funnel-drop-arrow {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 1rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--danger);
+      opacity: 0.7;
+    }
+
+    /* ─── Donut Chart ─── */
+    .chart-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 240px;
+    }
+
+    .chart-center-label {
+      position: absolute;
+      text-align: center;
+    }
+
+    .chart-center-label .big { font-size: 1.5rem; font-weight: 900; }
+    .chart-center-label .small { font-size: 0.7rem; color: var(--text-muted); }
+
+    .chart-legend-custom {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      padding: 0.55rem 0.85rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(99, 102, 241, 0.1);
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .legend-item:hover {
+      background: rgba(99, 102, 241, 0.12);
+      border-color: var(--border-glow);
+      transform: translateX(4px);
+    }
+
+    .legend-dot {
+      width: 14px; height: 14px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .legend-value {
+      margin-left: auto;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ─── Dropoff Table ─── */
+    .data-table { width: 100%; border-collapse: collapse; }
+
+    .data-table th {
+      text-align: left;
+      padding: 0.7rem 1rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .data-table td {
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+      vertical-align: middle;
+    }
+
+    .data-table tbody tr { transition: var(--transition); }
+    .data-table tbody tr:hover { background: rgba(99, 102, 241, 0.04); }
+
+    .step-name { font-weight: 700; color: var(--text-primary); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    .tag-success { background: var(--success-soft); color: var(--success); }
+    .tag-warning { background: var(--warning-soft); color: var(--warning); }
+    .tag-danger { background: var(--danger-soft); color: var(--danger); }
+
+    .mini-bar {
+      width: 60px; height: 6px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 9999px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .mini-bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      transition: width 0.8s ease;
+    }
+
+    /* ─── Live Feed ─── */
+    .feed-list { display: flex; flex-direction: column; gap: 0.5rem; max-height: 420px; overflow-y: auto; }
+
+    .feed-list::-webkit-scrollbar { width: 4px; }
+    .feed-list::-webkit-scrollbar-track { background: transparent; }
+    .feed-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    .feed-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.7rem 0.85rem;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      animation: feedSlide 0.4s ease-out;
+    }
+
+    .feed-item:hover {
+      background: rgba(99, 102, 241, 0.05);
+      border-color: var(--border);
+    }
+
+    @keyframes feedSlide {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feed-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .feed-content { flex: 1; min-width: 0; }
+
+    .feed-event {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .feed-detail {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .feed-time {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .feed-replay {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 3px 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 5px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 4px;
+      transition: var(--transition);
+    }
+
+    .feed-replay:hover { background: var(--accent); color: #fff; }
+
+    /* ─── Empty State ─── */
+    .empty-state {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--text-muted);
+    }
+
+    .empty-state-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .empty-state-text { font-size: 0.85rem; font-weight: 600; }
+    .empty-state-sub { font-size: 0.75rem; margin-top: 0.25rem; }
+
+    /* ─── Tooltip ─── */
+    [data-tooltip] { position: relative; }
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 10px;
+      background: #1e293b;
+      color: #f1f5f9;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 999;
+      box-shadow: var(--shadow);
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1280px) {
+      .kpi-row { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 1024px) {
+      .sidebar { display: none; }
+      .main-container { margin-left: 0; }
+      .grid-cols-2 { grid-template-columns: 1fr; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .kpi-row { grid-template-columns: 1fr; }
+      .content { padding: 1rem; }
+      .topbar { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-layout">
+
+    <!-- ═══════ SIDEBAR ═══════ -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">⚡</div>
+        <span class="brand-name">Quiz Analytics</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-label">Principal</div>
+        <div class="nav-item active" onclick="switchTab('all', this)">
+          <span class="nav-icon">📊</span> Visão Geral
+        </div>
+        <div class="nav-item" onclick="switchTab('funnel', this)">
+          <span class="nav-icon">🔻</span> Funil de Conversão
+        </div>
+        <div class="nav-item" onclick="switchTab('dropoff', this)">
+          <span class="nav-icon">⚠️</span> Diagnóstico de Quedas
+        </div>
+        <div class="nav-item" onclick="switchTab('live', this)">
+          <span class="nav-icon">🔴</span> Feed ao Vivo
+          <span class="nav-badge" id="navLiveBadge">0</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('devices', this)">
+          <span class="nav-icon">📱</span> Dispositivos
+        </div>
+
+        <div class="nav-label" style="margin-top: 0.5rem;">Ferramentas</div>
+        <a href="https://us.posthog.com/project/587018/replay" target="_blank" class="nav-item">
+          <span class="nav-icon">🎥</span> Gravações de Tela
+          <span style="margin-left: auto; font-size: 0.7rem; opacity: 0.5;">↗</span>
+        </a>
+        <a href="https://us.posthog.com/project/587018/insights/new" target="_blank" class="nav-item">
+          <span class="nav-icon">📈</span> Criar Insight
+          <span style="margin-left: auto; font-size: 0.7rem; opacity: 0.5;">↗</span>
+        </a>
+        <a href="http://localhost:8080/" target="_blank" class="nav-item">
+          <span class="nav-icon">🌐</span> Abrir o Quiz
+          <span style="margin-left: auto; font-size: 0.7rem; opacity: 0.5;">↗</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-dot"></div>
+        <div class="sidebar-footer-text">
+          PostHog #587018<br>
+          <span id="connectionStatus">Conectado — Ao vivo</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ═══════ MAIN ═══════ -->
+    <main class="main-container">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>Painel de Comando</h1>
+          <p>Monitoramento do fluxo de conversão e respostas do quiz</p>
+        </div>
+        <div class="topbar-right">
+          <span class="period-label">📅 Período:</span>
+          <div class="period-filter">
+            <button class="period-btn active" data-period="today" onclick="setPeriod('today', this)">Hoje</button>
+            <button class="period-btn" data-period="yesterday" onclick="setPeriod('yesterday', this)">Ontem</button>
+            <button class="period-btn" data-period="7days" onclick="setPeriod('7days', this)">Últimos 7 dias</button>
+          </div>
+          <div class="live-indicator">
+            <div class="live-dot"></div>
+            <span>AO VIVO</span>
+          </div>
+          <span class="last-update" id="lastUpdateText">Hoje · 100 eventos sincronizados</span>
+          <button class="btn-action" id="refreshBtn" onclick="fetchData()">
+            🔄 Atualizar
+          </button>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="content">
+
+        <!-- KPI Cards -->
+        <section id="kpis" class="kpi-row">
+          <div class="kpi-card" style="--kpi-color: var(--accent);">
+            <div class="kpi-top">
+              <span class="kpi-label">Visitantes Únicos</span>
+              <div class="kpi-icon-circle" style="background: var(--accent-soft);">👥</div>
+            </div>
+            <div class="kpi-value" id="kpiVisitors" style="color: var(--accent);">1</div>
+            <div class="kpi-subtitle">Total de sessões no quiz</div>
+          </div>
+
+          <div class="kpi-card" style="--kpi-color: var(--cyan);">
+            <div class="kpi-top">
+              <span class="kpi-label">Iniciaram o Quiz</span>
+              <div class="kpi-icon-circle" style="background: var(--cyan-soft);">🚀</div>
+            </div>
+            <div class="kpi-value" id="kpiStarts" style="color: var(--cyan);">1</div>
+            <div class="kpi-subtitle" id="kpiStartsRate">100% taxa de início</div>
+          </div>
+
+          <div class="kpi-card" style="--kpi-color: var(--success);">
+            <div class="kpi-top">
+              <span class="kpi-label">Completaram o Quiz</span>
+              <div class="kpi-icon-circle" style="background: var(--success-soft);">🏁</div>
+            </div>
+            <div class="kpi-value" id="kpiCompleted" style="color: var(--success);">0</div>
+            <div class="kpi-subtitle" id="kpiCompletedRate">0% taxa de conclusão</div>
+          </div>
+
+          <div class="kpi-card" style="--kpi-color: var(--warning);">
+            <div class="kpi-top">
+              <span class="kpi-label">Viram a Oferta VSL</span>
+              <div class="kpi-icon-circle" style="background: var(--warning-soft);">🎬</div>
+            </div>
+            <div class="kpi-value" id="kpiVsl" style="color: var(--warning);">0</div>
+            <div class="kpi-subtitle">Abriram o vídeo de vendas</div>
+          </div>
+
+          <div class="kpi-card" style="--kpi-color: var(--pink);">
+            <div class="kpi-top">
+              <span class="kpi-label">Cliques em Comprar</span>
+              <div class="kpi-icon-circle" style="background: var(--pink-soft);">🛒</div>
+            </div>
+            <div class="kpi-value" id="kpiCheckout" style="color: var(--pink);">0</div>
+            <div class="kpi-subtitle" id="kpiConvRate">0.0% taxa de conversão</div>
+          </div>
+        </section>
+
+        <!-- Funnel + Donut Section -->
+        <div class="grid-cols-2" id="funnelSection">
+
+          <!-- Funnel Panel -->
+          <div class="panel" id="funnel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-title">🔻 Funil de Conversão</div>
+                <div class="panel-subtitle">Jornada completa do visitante até a compra</div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="funnel-steps" id="funnelContainer">
+                <div class="empty-state">
+                  <div class="empty-state-icon">⏳</div>
+                  <div class="empty-state-text">Carregando funil...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Funnel Donut Chart Panel -->
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-title">📊 Distribuição do Funil</div>
+                <div class="panel-subtitle">Proporção dos usuários nas etapas macro</div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="chart-wrapper">
+                <canvas id="funnelDonutChart"></canvas>
+                <div class="chart-center-label">
+                  <div class="big" id="centerConvRate">0%</div>
+                  <div class="small">conversão</div>
+                </div>
+              </div>
+              <div class="chart-legend-custom" id="funnelLegend"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropoff Table -->
+        <div class="panel" id="dropoff">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">⚠️ Diagnóstico de Abandono por Etapa</div>
+              <div class="panel-subtitle">Identifique exatamente onde os visitantes estão desistindo</div>
+            </div>
+          </div>
+          <div style="overflow-x: auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Etapa / Pergunta</th>
+                  <th>Visualizações</th>
+                  <th>Retenção</th>
+                  <th>Barra Visual</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="dropoffBody">
+                <tr>
+                  <td colspan="5">
+                    <div class="empty-state">
+                      <div class="empty-state-icon">📊</div>
+                      <div class="empty-state-text">Calculando quedas...</div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Live Feed -->
+        <div class="panel" id="live">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">
+                🔴 Feed de Ações ao Vivo
+                <span class="live-indicator" style="font-size: 0.65rem; padding: 2px 8px; margin-left: 6px;">
+                  <div class="live-dot" style="width: 5px; height: 5px;"></div>
+                  TEMPO REAL
+                </span>
+              </div>
+              <div class="panel-subtitle">Últimas interações dos visitantes no quiz</div>
+            </div>
+            <a href="https://us.posthog.com/project/587018/replay" target="_blank" class="btn-action" style="font-size: 0.72rem; text-decoration: none;">
+              🎥 Ver Gravações ↗
+            </a>
+          </div>
+          <div class="panel-body">
+            <div class="feed-list" id="feedList">
+              <div class="empty-state">
+                <div class="empty-state-icon">📡</div>
+                <div class="empty-state-text">Aguardando eventos...</div>
+                <div class="empty-state-sub">Abra o quiz em outra aba para ver os dados aqui</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Devices Panel (Abaixo de Feed ao Vivo) -->
+        <div class="panel" id="devices">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">📱 Dispositivos & Navegadores</div>
+              <div class="panel-subtitle">De onde seus visitantes acessam o quiz</div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="grid-cols-2" style="align-items: center;">
+              <div class="chart-wrapper">
+                <canvas id="deviceChart"></canvas>
+                <div class="chart-center-label">
+                  <div class="big" id="totalDevices">—</div>
+                  <div class="small">acessos</div>
+                </div>
+              </div>
+              <div class="chart-legend-custom" id="deviceLegend" style="margin-top: 0; padding-top: 0; border-top: none;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
