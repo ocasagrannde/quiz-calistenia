@@ -1,0 +1,287 @@
+==================== COMPONENT DECLARATIONS ====================
+NOT FOUND BY REGEX: So (Step12Limitations)
+NOT FOUND BY REGEX: Mo (Step13Comfort)
+NOT FOUND BY REGEX: Co (Step14Encouragement)
+NOT FOUND BY REGEX: Po (Step15Height)
+NOT FOUND BY REGEX: Ao (Step16CurrentWeight)
+NOT FOUND BY REGEX: Eo (Step17TargetWeight)
+NOT FOUND BY REGEX: zo (Step18Age)
+NOT FOUND BY REGEX: an (Step1Age)
+NOT FOUND BY REGEX: Oo (Step20Lifestyle)
+NOT FOUND BY REGEX: Do (Step21Symptoms)
+NOT FOUND BY REGEX: Io (Step23ProfileReady)
+NOT FOUND BY REGEX: Ro (Step24Activities)
+NOT FOUND BY REGEX: Lo (Step25PreparingPlan)
+--------------------------------------------------
+VAR:  -> STEP: Step26Hydration
+--------------------------------------------------
+function Le(t){
+var s,a,r="";
+if(typeof t=="string"||typeof t=="number")r+=t;
+else if(typeof t=="object")if(Array.isArray(t)){
+var o=t.length;
+for(s=0;
+s<o;
+s++)t[s]&&(a=Le(t[s]))&&(r&&(r+=" "),r+=a)}
+else for(a in t)t[a]&&(r&&(r+=" "),r+=a);
+return r}
+function $e(){
+for(var t,s,a=0,r="",o=arguments.length;
+a<o;
+a++)(t=arguments[a])&&(s=Le(t))&&(r&&(r+=" "),r+=s);
+return r}
+const ge="-",pa=t=>{
+const s=ga(t),{
+conflictingClassGroups:a,conflictingClassGroupModifiers:r}
+=t;
+return{
+getClassGroupId:l=>{
+const i=l.split(ge);
+return i[0]===""&&i.length!==1&&i.shift(),Fe(i,s)||fa(l)}
+,getConflictingClassGroupIds:(l,i)=>{
+const d=a[l]||[];
+return i&&r[l]?[...d,...r[l]]:d}
+}
+}
+,Fe=(t,s)=>{
+if(t.length===0)return s.classGroupId;
+const a=t[0],r=s.nextPart.get(a),o=r?Fe(t.slice(1),r):void 0;
+if(o)return o;
+if(s.validators.length===0)return;
+const n=t.join(ge);
+return s.validators.find(({
+validator:l}
+)=>l(n))?.classGroupId}
+,Se=/^\[(.+)\]$/,fa=t=>{
+if(Se.test(t)){
+const s=Se.exec(t)[1],a=s?.substring(0,s.indexOf(":"));
+if(a)return"arbitrary.."+a}
+}
+,ga=t=>{
+const{
+theme:s,prefix:a}
+=t,r={
+nextPart:new Map,validators:[]}
+;
+return va(Object.entries(t.classGroups),a).forEach(([n,l])=>{
+fe(l,r,n,s)}
+),r}
+,fe=(t,s,a,r)=>{
+t.forEach(o=>{
+if(typeof o=="string"){
+const n=o===""?s:Me(s,o);
+n.classGroupId=a;
+return}
+if(typeof o=="function"){
+if(ba(o)){
+fe(o(r),s,a,r);
+return}
+s.validators.push({
+validator:o,classGroupId:a}
+);
+return}
+Object.entries(o).forEach(([n,l])=>{
+fe(l,Me(s,n),a,r)}
+)}
+)}
+,Me=(t,s)=>{
+let a=t;
+return s.split(ge).forEach(r=>{
+a.nextPart.has(r)||a.nextPart.set(r,{
+nextPart:new Map,validators:[]}
+),a=a.nextPart.get(r)}
+),a}
+,ba=t=>t.isThemeGetter,va=(t,s)=>s?t.map(([a,r])=>{
+const o=r.map(n=>typeof n=="string"?s+n:typeof n=="object"?Object.fromEntries(Object.entries(n).map(([l,i])=>[s+l,i])):n);
+return[a,o]}
+):t,ya=t=>{
+if(t<1)return{
+get:()=>{
+}
+,set:()=>{
+}
+}
+;
+let s=0,a=new Map,r=new Map;
+const o=(n,l)=>{
+a.set(n,l),s++,s>t&&(s=0,r=a,a=new Map)}
+;
+return{
+get(n){
+let l=a.get(n);
+if(l!==void 0)return l;
+if((l=r.get(n))!==void 0)return o(n,l),l}
+,set(n,l){
+a.has(n)?a.set(n,l):o(n,l)}
+}
+}
+,Xe="!",ja=t=>{
+const{
+separator:s,experimentalParseClassName:a}
+=t,r=s.length===1,o=s[0],n=s.length,l=i=>{
+const d=[];
+let m=0,c=0,u;
+for(let y=0;
+y<i.length;
+y++){
+let k=i[y];
+if(m===0){
+if(k===o&&(r||i.slice(y,y+n)===s)){
+d.push(i.slice(c,y)),c=y+n;
+continue}
+if(k==="/"){
+u=y;
+continue}
+}
+k==="["?m++:k==="]"&&m--}
+const f=d.length===0?i:i.substring(c),N=f.startsWith(Xe)
+
+NOT FOUND BY REGEX: Fo (Step27Diet)
+NOT FOUND BY REGEX: Xo (Step28Habits)
+NOT FOUND BY REGEX: Ho (Step29LifeEvents)
+NOT FOUND BY REGEX: uo (Step2SocialProof)
+NOT FOUND BY REGEX: Vo (Step30Motivation)
+NOT FOUND BY REGEX: Go (Step31Projection)
+NOT FOUND BY REGEX: Uo (Step32Loading)
+NOT FOUND BY REGEX: Zo (Step33Email)
+NOT FOUND BY REGEX: Ko (Step34Offer)
+NOT FOUND BY REGEX: xo (Step3CalistheniaExperience)
+NOT FOUND BY REGEX: fo (Step3MainGoal)
+NOT FOUND BY REGEX: go (Step4AdditionalGoals)
+NOT FOUND BY REGEX: po (Step4Nao)
+--------------------------------------------------
+VAR: ho -> STEP: Step4Sim
+--------------------------------------------------
+const ho=({
+onContinue:t,onBack:s}
+)=>e.jsxs(v,{
+step:4,totalSteps:35,showBack:!0,onBack:s,children:[e.jsx("div",{
+className:"flex-1 flex items-start md:items-center justify-start md:justify-center px-6 md:px-12 py-2 md:py-8",children:e.jsxs("div",{
+className:"w-full max-w-5xl flex flex-col md:flex-row gap-4 md:gap-12 items-center",children:[e.jsxs("div",{
+className:"flex-1 text-center md:text-left",children:[e.jsx("h1",{
+className:"text-xl md:text-3xl lg:text-4xl font-bold text-foreground leading-snug md:leading-tight mb-2 md:mb-6",children:"Você já tem a base, mas a Calistenia Asiática é diferente da calistenia comum."}
+),e.jsxs("p",{
+className:"text-sm md:text-lg text-muted-foreground leading-relaxed",children:["Enquanto o método tradicional foca apenas em força externa, nossa técnica ativa as ",e.jsx("strong",{
+className:"text-foreground",children:"fibras profundas"}
+),", agindo na musculatura interna, onde eliminamos a ",e.jsx("strong",{
+className:"text-foreground",children:"gordura mais difícil de queimar"}
+)," e destravamos o seu metabolismo de forma definitiva."]}
+)]}
+),e.jsx("div",{
+className:"w-full md:w-1/2 flex-shrink-0",children:e.jsx("img",{
+src:We,alt:"Mulher praticando exercício",className:"w-full h-auto rounded-2xl object-cover"}
+)}
+)]}
+)}
+),e.jsx("div",{
+className:"fixed bottom-0 left-0 right-0 px-6 pb-4 pt-4",children:e.jsx(ve,{
+onClick:t,className:"w-full max-w-md mx-auto flex items-center justify-center py-6 text-base font-semibold uppercase tracking-wide",children:"Continuar"}
+)}
+)]}
+),po=({
+onContinue:t,onBack:s}
+)=>e.jsxs(v,{
+step:4,totalSteps:35,showBack:!0,onBack:s,children:[e.jsx("div",{
+className:"flex-1 flex items-center justify-center px-6 md:px-12 py-4 md:py-8",children:e.jsxs("div",{
+className:"w-full max-w-5xl flex flex-col md:flex-row gap-4 md:gap-12 items-center",children:[e.jsxs("div",{
+className:"flex-1 text-center md:text-left",children:[e.jsx("h1",{
+className:"text-xl md:text-3xl lg:text-4xl font-bold text-foreground leading-snug md:leading-tight mb-2 md:mb-6",children:"Não se preocupe, a Calistenia Asiática é perfeita para quem está começando do zero!"}
+),e.jsxs("p",{
+className:"text-sm md:text-lg text-muted-foreground leading-relaxed",children:["Calistenia significa usar apenas o peso do seu corpo, e nossa técnica simplifica tudo ao focar na ativação das ",e.jsx("strong",{
+className:"text-foreground",children:"fibras profundas"}
+),". É o caminho mais rápido para você ",e.jsx("strong",{
+className:
+
+--------------------------------------------------
+VAR: vo -> STEP: Step5BodyZones
+--------------------------------------------------
+const vo=({
+onContinue:t,onBack:s}
+)=>{
+const[a,r]=h.useState([]),[o,n]=h.useState(!1),l=[{
+id:"queixo",label:"Queixo duplo",image:ut}
+,{
+id:"bracos",label:"Braços flácidos",image:xt}
+,{
+id:"seios",label:"Seios caídos",image:ht}
+,{
+id:"barriga",label:"Gordura da barriga",image:Ne}
+,{
+id:"joelhos",label:"Gordura nos joelhos",image:pt}
+,{
+id:"traseiro",label:"Traseiro de alforje",image:ft}
+,{
+id:"nadegas",label:"Nádegas flácidas",image:gt}
+,{
+id:"coxa",label:"Parte interna da coxa",image:Ne}
+],i=c=>{
+n(!1),r(u=>u.includes(c)?u.filter(f=>f!==c):[...u,c])}
+,d=c=>{
+n(c),r(c?l.map(u=>u.id):[])}
+,m=e.jsx(O,{
+onClick:()=>t(a),disabled:a.length===0,children:"Próximo passo"}
+);
+return e.jsx(v,{
+step:8,totalSteps:36,showBack:!0,onBack:s,stickyFooter:m,children:e.jsx("div",{
+className:"flex-1 px-4 py-6 overflow-y-auto",children:e.jsxs("div",{
+className:"max-w-md mx-auto",children:[e.jsx("h1",{
+className:"text-xl md:text-2xl font-bold text-foreground mb-1 text-center",children:"Quais são as zonas que mais a preocupam?"}
+),e.jsx("p",{
+className:"text-muted-foreground mb-6 text-center",children:"Por favor, selecione todas as opções aplicáveis"}
+),e.jsxs("div",{
+className:"flex items-center gap-3 mb-4",children:[e.jsx(rt,{
+checked:o,onCheckedChange:d}
+),e.jsx("span",{
+className:"font-medium text-foreground",children:"Melhorar o corpo inteiro"}
+)]}
+),e.jsx("div",{
+className:"space-y-3",children:l.map(c=>e.jsx(P,{
+onClick:()=>i(c.id),selected:a.includes(c.id),showCheckbox:!0,image:c.image,children:c.label}
+,c.id))}
+)]}
+)}
+)}
+)}
+,yo=({
+onContinue:t,onBack:s}
+)=>{
+const[a,r]=h.useState([]),o=[{
+id:"barriga",label:"Barriga",image:bt}
+,{
+id:"bunda",label:"Bunda",image:vt}
+,{
+id:"pernas",label:"Pernas",image:yt}
+,{
+id:"peito",label:"Peito",image:jt}
+,{
+id:"bracos",label:"Braços",image:wt}
+,{
+id:"costas",label:"Costas",image:Nt}
+],n=i=>{
+r(d=>d.includes(i)?d.filter(m=>m!==i):[...d,i])}
+,l=e.jsx(O,{
+onClick:()=>t(a),disabled:a.length===0,children:"Próximo passo"}
+);
+return e.jsx(v,{
+step:9,totalSteps:36,showBack:!0,onBack:s,stickyFooter:l,children:e.jsx("div",{
+className:"flex-1 px-4 py-6 pb-32 md:pb-48 overflow-y-auto",children:e.jsxs("div",{
+className:"max-w-md mx-auto",children:[e.jsx("h1",{
+className:"text-xl md:text-2xl font-bold text-foreground mb-1 text-center",children:"Quais são as suas zonas alvo?"}
+),e.jsx("p",{
+className:"text-muted-foreground mb-6 text-center",children:"Escolha todas as opções aplicáveis"}
+),e.jsx("div",{
+className:"space-y-3",children
+
+NOT FOUND BY REGEX: yo (Step5bTargetZones)
+NOT FOUND BY REGEX: jo (Step6Education)
+NOT FOUND BY REGEX: wo (Step7BodyType)
+NOT FOUND BY REGEX: No (Step8DreamBody)
+NOT FOUND BY REGEX: ko (Step9FitnessHistory)
+NOT FOUND BY REGEX: Qo (StepCommitmentDate)
+NOT FOUND BY REGEX: Bo (StepEatingHabits)
+NOT FOUND BY REGEX: Wo (StepMealPreferences)
+NOT FOUND BY REGEX: Yo (StepMotivationReal)
+NOT FOUND BY REGEX: Jo (StepPlanSummary)
+NOT FOUND BY REGEX: To (StepSleep)
+NOT FOUND BY REGEX: _o (StepTransformation)
+NOT FOUND BY REGEX: qo (StepWater)

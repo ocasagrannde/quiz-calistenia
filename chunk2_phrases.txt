@@ -1,0 +1,1324 @@
+./index-m7tqU0Td.js
+./query-C74lFsw9.js
+./vendor-D-Q10PB_.js
+./radix-Cqfao8Cg.js
+./router-CMYUmfrL.js
+string
+number
+object
+arbitrary..
+function
+screen
+length
+percentage
+position
+image
+colors
+spacing
+brightness
+contrast
+grayscale
+hueRotate
+invert
+gradientColorStops
+gradientColorStopPositions
+inset
+margin
+opacity
+padding
+saturate
+scale
+sepia
+space
+translate
+contain
+hidden
+visible
+scroll
+bottom
+center
+left-bottom
+left-top
+right
+right-bottom
+right-top
+solid
+dashed
+dotted
+double
+normal
+multiply
+overlay
+darken
+lighten
+color-dodge
+color-burn
+hard-light
+soft-light
+difference
+exclusion
+saturation
+color
+luminosity
+start
+between
+around
+evenly
+stretch
+avoid
+avoid-page
+column
+square
+video
+container
+break-after
+break-before
+break-inside
+avoid-column
+box-decoration
+slice
+clone
+content
+block
+inline-block
+inline
+inline-flex
+table
+inline-table
+table-caption
+table-cell
+table-column
+table-column-group
+table-footer-group
+table-header-group
+table-row-group
+table-row
+flow-root
+inline-grid
+contents
+list-item
+isolate
+isolation-auto
+object-fit
+cover
+scale-down
+object-position
+overflow-x
+overflow-y
+overscroll-x
+overscroll-y
+static
+fixed
+absolute
+relative
+sticky
+inset-x
+inset-y
+invisible
+collapse
+row-reverse
+col-reverse
+wrap-reverse
+nowrap
+initial
+first
+grid-cols
+col-start-end
+col-start
+col-end
+grid-rows
+row-start-end
+row-start
+row-end
+grid-flow
+dense
+row-dense
+col-dense
+auto-cols
+auto-rows
+gap-x
+gap-y
+align-content
+baseline
+align-items
+align-self
+place-content
+place-items
+place-self
+space-x
+space-x-reverse
+space-y
+space-y-reverse
+min-w
+max-w
+prose
+min-h
+max-h
+antialiased
+subpixel-antialiased
+italic
+not-italic
+extralight
+light
+medium
+semibold
+extrabold
+black
+fvn-normal
+normal-nums
+fvn-ordinal
+ordinal
+fvn-slashed-zero
+slashed-zero
+fvn-figure
+lining-nums
+oldstyle-nums
+fvn-spacing
+proportional-nums
+tabular-nums
+fvn-fraction
+diagonal-fractions
+stacked-fractions
+tighter
+tight
+wider
+widest
+line-clamp
+relaxed
+loose
+list-image
+list-style-type
+decimal
+list-style-position
+inside
+outside
+placeholder-color
+placeholder-opacity
+underline
+overline
+line-through
+no-underline
+from-font
+underline-offset
+uppercase
+lowercase
+capitalize
+normal-case
+truncate
+balance
+pretty
+vertical-align
+middle
+super
+pre-line
+pre-wrap
+break-spaces
+words
+manual
+local
+no-repeat
+round
+gradient-to
+gradient-from-pos
+gradient-via-pos
+gradient-to-pos
+gradient-from
+gradient-via
+divide-x
+divide-x-reverse
+divide-y
+divide-y-reverse
+divide-opacity
+divide-style
+divide-color
+outline-style
+outline-offset
+outline-w
+outline-color
+ring-w
+ring-w-inset
+ring-inset
+ring-color
+ring-opacity
+ring-offset-w
+ring-offset
+ring-offset-color
+inner
+mix-blend
+plus-lighter
+plus-darker
+drop-shadow
+hue-rotate
+backdrop-filter
+backdrop-blur
+backdrop-brightness
+backdrop-contrast
+backdrop-grayscale
+backdrop-hue-rotate
+backdrop-invert
+backdrop-opacity
+backdrop-saturate
+backdrop-sepia
+separate
+table-layout
+transform
+linear
+in-out
+pulse
+bounce
+scale-x
+scale-y
+translate-x
+translate-y
+skew-x
+skew-y
+transform-origin
+top-right
+bottom-right
+bottom-left
+top-left
+default
+pointer
+not-allowed
+context-menu
+progress
+crosshair
+vertical-text
+alias
+no-drop
+grabbing
+all-scroll
+col-resize
+row-resize
+n-resize
+e-resize
+s-resize
+ne-resize
+nw-resize
+se-resize
+sw-resize
+ew-resize
+ns-resize
+nesw-resize
+nwse-resize
+zoom-in
+zoom-out
+caret-color
+pointer-events
+scroll-behavior
+smooth
+scroll-m
+scroll-mx
+scroll-my
+scroll-ms
+scroll-me
+scroll-mt
+scroll-mr
+scroll-mb
+scroll-ml
+scroll-p
+scroll-px
+scroll-py
+scroll-ps
+scroll-pe
+scroll-pt
+scroll-pr
+scroll-pb
+scroll-pl
+snap-align
+align-none
+snap-stop
+always
+snap-type
+snap-strictness
+mandatory
+proximity
+manipulation
+touch-x
+touch-pan
+touch-y
+touch-pz
+touch-pinch-zoom
+will-change
+stroke-w
+sr-only
+not-sr-only
+forced-color-adjust
+basis
+shrink
+leading
+display
+overflow
+touch
+primary
+button
+Activity
+M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2
+169zse
+M9 12h.01
+157uk2
+M15 12h.01
+1k8ypt
+M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5
+1u7htd
+M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1
+5yv0yz
+Battery
+1w10f2
+4dh1rd
+Brain
+M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z
+l5xja
+M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z
+ep3f8r
+M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4
+1p4c4q
+M17.599 6.5a3 3 0 0 0 .399-1.375
+tmeiqw
+M6.003 5.125A3 3 0 0 0 6.401 6.5
+105sqy
+M3.477 10.896a4 4 0 0 1 .585-.396
+ql3yin
+M19.938 10.5a4 4 0 0 1 .585.396
+1qfode
+M6 18a4 4 0 0 1-1.967-.516
+2e4loj
+M19.967 17.484A4 4 0 0 1 18 18
+159ez6
+Briefcase
+M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16
+jecpp
+i6l2r4
+Calendar
+M8 2v4
+1cmpym
+M16 2v4
+4m81vk
+1hopcy
+M3 10h18
+8toen8
+Check
+M20 6 9 17l-5-5
+1gmf2c
+ChevronDown
+m6 9 6 6 6-6
+qrunsl
+ChevronRight
+m9 18 6-6-6-6
+mthhwq
+ChevronUp
+m18 15-6-6-6 6
+153udz
+Dumbbell
+M14.4 14.4 9.6 9.6
+ic80wn
+M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z
+nnl7wr
+m21.5 21.5-1.4-1.4
+1f1ice
+M3.9 3.9 2.5 2.5
+1evmna
+M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z
+yhosts
+Ellipsis
+circle
+41hilf
+1wjl8i
+1pcz8c
+Flame
+M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z
+96xj49
+Heart
+M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z
+c3ymky
+M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z
+a7tn18
+M12 2v20
+t6zp3m
+m15 19-3 3-3-3
+11eu04
+m19 9 3 3-3 3
+1mg7y2
+M2 12h20
+9i4pu4
+m5 9-3 3 3 3
+j64kie
+m9 5 3-3 3 3
+l8vdw6
+m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z
+wa1lgi
+m8.5 8.5 7 7
+rvfmvr
+Rocket
+M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z
+m3kijz
+m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z
+1fmvmk
+M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0
+1f8sc4
+M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5
+qeys4
+Scale
+m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z
+7g6ntu
+m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z
+ijws7r
+M7 21h10
+1b0cd5
+M12 3v18
+108xh3
+M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2
+3gwbw2
+Shirt
+M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z
+1wgbhj
+Sparkles
+M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z
+4pj2yx
+M20 3v4
+1olli1
+M22 5h-4
+1gvqau
+M4 17v2
+vumght
+M5 18H3
+zchphs
+Target
+1mglay
+1vlfrh
+1c9p78
+TriangleAlert
+m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3
+wmoenq
+M12 9v4
+juzpu7
+M12 17h.01
+p32p05
+UserCheck
+M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2
+1yyitq
+nufk8
+polyline
+16 11 18 13 22 9
+1pwet4
+M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2
+975kel
+17ys0d
+Users
+M22 21v-2a4 4 0 0 0-3-3.87
+kshegd
+M16 3.13a4 4 0 0 1 0 7.75
+1da9ce
+M18 6 6 18
+1bl5f8
+m6 6 12 12
+d8bk6v
+M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z
+1xq2db
+eager
+async
+relative overflow-hidden bg-muted ${a}
+absolute inset-0 bg-muted
+aria-hidden
+max-w-md w-full text-center
+Grupo de mulheres praticando exercícios
+mb-6 rounded-2xl quiz-shadow-lg w-full
+Elas conseguiram e você também pode
+Mais de 27 milhões de mulheres já transformaram suas vidas com a Calistenia Asiática
+Continuar
+Você já experimentou exercícios de calistenia?
+relative w-full max-w-md min-h-[450px] md:min-h-0
+absolute right-[-80px] top-[-100px] w-[480px] md:right-[-80px] md:top-[-80px] md:w-[260px] lg:right-[-60px] lg:w-[300px] pointer-events-none z-0
+Mulher fitness
+space-y-3 w-[60%] md:w-[65%] relative z-10
+boolean
+inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
+Button
+Você já tem a base, mas a Calistenia Asiática é diferente da calistenia comum.
+Enquanto o método tradicional foca apenas em força externa, nossa técnica ativa as 
+strong
+fibras profundas
+, agindo na musculatura interna, onde eliminamos a 
+gordura mais difícil de queimar
+ e destravamos o seu metabolismo de forma definitiva.
+Mulher praticando exercício
+fixed bottom-0 left-0 right-0 px-6 pb-4 pt-4
+Não se preocupe, a Calistenia Asiática é perfeita para quem está começando do zero!
+Calistenia significa usar apenas o peso do seu corpo, e nossa técnica simplifica tudo ao focar na ativação das 
+. É o caminho mais rápido para você 
+destravar o metabolismo
+secar a barriga
+ sem o esforço exaustivo da academia.
+max-w-md mx-auto
+Qual é seu 
+principal objetivo
+space-y-3 mt-6
+perder-peso
+Perder peso
+desenvolver-musculos
+Desenvolver músculos
+manter-peso
+Manter o peso e ficar em forma
+melhorar-aptidao
+Melhorar a aptidão física
+energia
+Aumentar a energia
+Melhorar o sono
+estresse
+Reduzir o estresse
+postura
+Melhorar a postura e a mobilidade
+Desenvolver flexibilidade
+O que mais você espera alcançar com este plano?
+Pode escolher várias opções
+space-y-3
+Switch
+switch
+aria-checked
+aria-required
+data-state
+data-disabled
+translateX(-100%)
+SwitchThumb
+SwitchBubbleInput
+checked
+click
+input
+checkbox
+unchecked
+peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50
+pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0
+queixo
+Queixo duplo
+bracos
+Braços flácidos
+seios
+Seios caídos
+barriga
+Gordura da barriga
+joelhos
+Gordura nos joelhos
+traseiro
+Traseiro de alforje
+nadegas
+Nádegas flácidas
+Parte interna da coxa
+Próximo passo
+Quais são as zonas que mais a preocupam?
+Por favor, selecione todas as opções aplicáveis
+Melhorar o corpo inteiro
+Barriga
+bunda
+Bunda
+pernas
+Pernas
+peito
+Peito
+Braços
+costas
+Costas
+Quais são as suas zonas alvo?
+Escolha todas as opções aplicáveis
+max-w-md mx-auto text-center
+mb-2 md:mb-3 flex justify-center
+Mulher fazendo sinal de OK
+Apenas 7 minutos por dia — transformarão seu corpo e
+destravarão o seu metabolismo
+sem o esforço exaustivo da academia!
+O Protocolo de Calistenia Asiática utiliza ativações de fibras profundas para derreter a gordura acumulada e chapar a barriga, agindo onde os exercícios comuns de academia não conseguem chegar, de forma simples e definitiva...
+fixed bottom-0 left-0 right-0 p-4 bg-background z-50
+magra
+Magra
+falsa-magra
+Falsa Magra
+acima-peso
+Acima do peso
+sobrepeso
+Sobrepeso
+max-w-4xl mx-auto
+Como você descreveria o seu corpo atualmente?
+grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4
+curvilinea
+Curvado
+magro
+Magro
+em-forma
+Em forma
+tonificado
+Tonificado
+satisfeita
+Estou bem com meu corpo
+Qual é o corpo dos seus sonhos?
+1-2-anos
+1 a 2 anos atrás
+3-5-anos
+3 a 5 anos atrás
+mais-5-anos
+Mais de 5 anos atrás
+nunca
+Nunca
+Há quanto tempo você estava na melhor forma da sua vida?
+relative w-full h-[75vh] md:h-[420px]
+absolute right-1/2 top-0 max-w-xs space-y-3
+Mulher em forma
+absolute left-1/2 top-0 h-full md:h-[400px] object-cover md:object-contain object-top pointer-events-none -translate-x-[30%]
+nenhuma
+Costas sensíveis
+Joelhos sensíveis
+quadril
+Quadril sensível
+ombros
+Ombros e braços
+panturrilhas
+Panturrilhas e tornozelos
+Nenhuma das opções acima
+Você tem dificuldades com algum dos seguintes itens?
+Sinto dor/Desconforto
+dificuldade
+Sinto alguma dificuldade
+confortavel
+Sinto-me confortável
+Você se sente confortável ao se exercitar?
+mb-6 rounded-2xl overflow-hidden quiz-shadow-lg bg-muted
+Mulher motivada
+Nós cuidamos de você!
+A dor não vai te impedir. Adaptaremos seu programa para promover movimentos seguros e suaves.
+Isso é ótimo!
+Você está pronta para seguir em frente - prepare-se para a transformação com a Calistenia Asiática.
+mousemove
+mouseup
+touchmove
+touchend
+Qual é a sua altura?
+relative h-24 cursor-grab active:cursor-grabbing select-none overflow-hidden
+absolute left-1/2 z-10 flex flex-col items-center
+translateX(-50%)
+8px solid transparent
+10px solid hsl(var(--primary))
+absolute h-px bg-muted-foreground/50
+translateX(-${W}px)
+${z}px
+absolute flex items-start
+${f}px
+absolute text-xs text-muted-foreground/60
+${S}px
+Arraste para ajustar
+Calculando seu IMC
+baixo peso
+obeso
+Qual é o seu peso agora?
+Libra
+translateX(-${p}px)
+${W}px
+${N}px
+${B}px
+Seu IMC é 
+, que é considerado
+Mantenha-se positivo e concentre-se em uma dieta equilibrada e exercícios.
+Qual é o seu peso alvo?
+Qual é a sua idade?
+numeric
+[0-9]*
+Digite sua idade
+Perguntamos sua idade para personalizar seu plano
+As pessoas mais velhas têm um percentual de gordura corporal mais alto do que as pessoas mais jovens com o mesmo IMC.
+sedentario
+Sedentário
+Eu passo a maior parte do dia sentado
+moderado
+Atividade moderada
+Eu faço pausas ativas
+ativo
+Eu sou imparável
+Estou de pé o dia todo
+Como você descreveria seu dia típico?
+baixo
+Baixo, sinto-me cansada durante todo o dia
+queda
+Queda pós-almoço
+arrastando
+Arrastando antes das refeições
+Alto e estável
+Como estão seus níveis de energia durante o dia?
+Eu só tomo café ou chá
+2copos
+Cerca de 2 copos (0,5 L)
+2a6copos
+2 a 6 copos (0,5–1,5 L)
+mais6
+Mais de 6 copos
+Quanto de água você bebe diariamente?
+absolute right-1/2 top-0 max-w-xs space-y-3 z-10
+Mulher bebendo água
+absolute left-1/2 top-0 h-full md:h-[400px] pointer-events-none -translate-x-[15%] z-0 object-cover object-top
+menos5
+Menos de 5 horas
+5-6 horas
+7-8 horas
+mais8
+Mais de 8 horas
+Quantas horas você costuma dormir?
+md:hidden flex flex-col items-center
+Mulher dormindo
+grid grid-cols-2 gap-3 w-full max-w-sm
+hidden md:block relative w-full h-[420px]
+absolute left-1/2 top-0 h-[400px] pointer-events-none -translate-x-[15%] z-0
+vegetarian
+Eu sou vegetariana
+Verduras, grãos, mas sem carne animal
+vegan
+Eu sou vegana
+Puramente à base de plantas, sem produtos de origem animal
+gluten-free
+Não contém glúten
+Exclua produtos de grãos que contenham glúten
+lactose-free
+Sem lactose
+Excluir produtos lácteos
+no-restrictions
+Sem restrições
+Aberto a todos os alimentos
+Quais são suas preferências de refeição?
+fixed bottom-0 left-0 right-0 p-4 z-10
+emocional
+Comer emocionalmente ou por tédio
+demais
+Comer demais
+lanche-noturno
+Lanche noturno
+pular-refeicoes
+Pular refeições com muita frequência
+Você tem algum desses hábitos?
+grid grid-cols-1 gap-3 w-full max-w-md mx-auto
+Moderado
+Ativo
+muito-ativo
+Avançado
+exercicio-passado
+Intermediário
+Iniciante
+sem-exercicio
+Preguiçoso, tendência à flacidez
+Em resistência, difícil queimar gordura
+Lento, fácil de ganhar peso
+Alerta de Fragilidade Metabólica:
+Embora seu peso seja baixo, seu metabolismo está desequilibrado. A falta de estímulo nas fibras profundas causa perda de tônus e fragilidade interna. O Protocolo Asiático é essencial para fortalecer sua base e garantir um corpo firme, saudável e funcional.
+Alerta de Estagnação:
+Cuidado com o efeito "falsa magra". Seu peso está normal, mas seu metabolismo está estagnado. Sem a ativação das fibras profundas, o corpo acumula gordura visceral e perde a definição. Você precisa destravar sua queima natural agora para evitar a flacidez e o envelhecimento metabólico.
+Alerta de Bloqueio:
+Seu metabolismo entrou em modo de resistência. O excesso de peso está sobrecarregando suas articulações e travando sua energia diária. O segredo para voltar a secar é a ativação rítmica das fibras profundas, que derrete a gordura mais difícil sem o esforço exaustivo da academia.
+Alerta de Risco Urgente:
+Seu metabolismo está em "modo de sobrevivência", travando a queima e gerando inflamação. Isso causa fadiga crônica e riscos sérios à sua saúde. A Calistenia Asiática é a única via segura para destravar seu sistema e eliminar gordura de forma rápida, sem impacto e sem exaustão.
+Seu perfil está pronto
+Índice de Massa Corporal (IMC)
+relative mb-2
+absolute -top-5 transform -translate-x-1/2 bg-foreground text-background text-xs px-2 py-0.5 rounded font-semibold whitespace-nowrap
+${n()}%
+Você - 
+absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-foreground
+relative h-3 rounded-full overflow-hidden mb-1
+absolute inset-0
+linear-gradient(to right, #60a5fa 0%, #22c55e 30%, #facc15 50%, #f97316 70%, #ef4444 100%)
+absolute top-0 w-3 h-3 bg-white rounded-full border-2 border-foreground shadow-md transform -translate-x-1/2
+ABAIXO DO PESO
+NORMAL
+SOBREPESO
+OBESO
+space-y-2 md:space-y-2.5
+Estilo de vida
+Nível de condicionamento
+Metabolismo
+Reduza o estresse e traga equilíbrio à sua vida
+barra
+Barra
+Afine seus músculos, mesmo os ocultos
+resistencia
+Resistência
+Trabalhe esses músculos para ficar mais forte
+caminhada
+Caminhada
+Energize seu corpo, fortaleça cada passo
+O que você acrescentaria além da Calistenia?
+Selecione pelo menos um
+Já estamos preparando seu plano personalizado
+Adicionamos as atividades que você selecionou ao seu plano:
+. Eles a ajudarão gentilmente a se sentir mais forte, com mais mobilidade e mais em sintonia consigo mesma - em todos os estágios da menopausa.
+mb-6 rounded-2xl overflow-hidden quiz-shadow-lg
+Mulheres praticando atividades
+cafe-cha
+2-copos
+2-6-copos
+2 a 6 copos (0,5-1,5 L)
+mais-6-copos
+Quanta água você bebe diariamente?
+hidden lg:block lg:w-1/2 bg-muted
+sem-restricao
+vegetariano
+Eu sou vegetariano
+Verduras, cereais, mas sem carne animal
+vegano
+Eu sou vegano
+sem-gluten
+Sem glúten
+Exclua produtos de cereais que contenham glúten
+sem-lactose
+Excluir laticínios
+cetogenica
+Dieta cetogênica
+Dieta com baixo teor de carboidratos e alto teor de gordura
+Quais são suas preferências alimentares?
+space-y-3 pb-4
+nenhum
+procrastinacao
+Procrastinação
+alimentacao
+Alimentação pouco saudável
+redes-sociais
+Mídias sociais
+Beber muita cafeína
+assistir
+Maratona de séries
+inseguranca
+Dúvida sobre si mesmo
+roer-unhas
+Roer as unhas
+atrasada
+Estar atrasada
+fumar
+Fumar
+alcool
+Beber álcool
+Nenhum deles
+Quais desses hábitos você tem?
+casamento
+Casamento ou relacionamento
+gravidez
+Gravidez
+trabalho
+Trabalho agitado ou vida familiar
+Estresse ou saúde mental
+medicamento
+Medicamento ou distúrbio hormonal
+Nenhuma das acima
+Algum dos eventos abaixo te levou a ganhar peso nos últimos anos?
+Recupere Seu Corpo!
+Não sabe por onde começar? Nós já planejamos tudo. Não tem certeza de que pode fazer isso? Estamos prontos para motivá-la e apoiá-la!
+É assim que a 
+transformação da sua vida
+ se parece
+Com base nas suas respostas, prevemos que você está entre as mulheres com mais chances de atingir seus objetivos!
+relative mb-6
+0 0 400 200
+polygon
+50,120 350,180 350,200 50,200
+hsl(var(--destructive) / 0.2)
+opacity 0.3s ease-out 0.3s
+50,120 350,60 350,180 50,120
+hsl(142 76% 36% / 0.15)
+hsl(142 76% 36%)
+stroke-dashoffset 0.4s ease-out
+hsl(var(--destructive))
+scale(1)
+scale(0)
+50px 120px
+opacity 0.2s ease-out, transform 0.2s ease-out
+350px 60px
+opacity 0.15s ease-out 0.35s, transform 0.15s ease-out 0.35s
+350px 180px
+hsl(var(--muted-foreground))
+opacity 0.3s ease-out
+absolute bg-white border border-border rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm
+translateX(0)
+translateX(-10px)
+Você
+absolute bg-green-500 text-white rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm
+translateX(10px)
+opacity 0.15s ease-out 0.4s, transform 0.15s ease-out 0.4s
+Com Calistenia Asiática
+absolute bg-red-500 text-white rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm
+Sem mudanças
+max-w-md mx-auto flex flex-col gap-4 md:gap-5
+O último plano que você precisará para ficar em forma
+Prevemos que você estará com
+em até 21 dias
+relative h-[150px] md:h-[200px]
+0 0 400 220
+xMidYMid meet
+linearGradient
+areaGradient
+#ef4444
+#fbbf24
+#22c55e
+lineGradient
+#dc2626
+#f59e0b
+#16a34a
+#e5e7eb
+M30,40 Q120,80 200,130 Q280,170 380,190 L380,200 L30,200 Z
+url(#areaGradient)
+opacity 0.5s ease-out 0.3s
+M30,40 Q120,80 200,130 Q280,170 380,190
+url(#lineGradient)
+stroke-dashoffset 0.6s ease-out
+white
+30px 40px
+200px 130px
+opacity 0.2s ease-out 0.3s, transform 0.2s ease-out 0.3s
+380px 190px
+opacity 0.2s ease-out 0.5s, transform 0.2s ease-out 0.5s
+opacity 0.2s ease-out 0.1s
+opacity 0.2s ease-out 0.35s
+#374151
+Semana 2
+opacity 0.2s ease-out 0.55s
+Protocolo de 21 dias quase pronto!
+De acordo com as suas respostas, você está pronta para ter resultados em 21 dias com o nosso programa.
+confiante
+Me sentir mais confiante com o meu corpo.
+Ficar mais saudável e ter mais energia.
+roupas
+Me sentir bem nas minhas roupas.
+pos-parto
+Recuperar o corpo e a autoestima após o parto.
+outro
+Outro.
+Qual é o seu principal motivo para transformar o seu corpo?
+[object Date]
+[object Number]
+[object String]
+less than a second
+less than {{count}} seconds
+1 second
+{{count}} seconds
+half a minute
+less than a minute
+less than {{count}} minutes
+1 minute
+{{count}} minutes
+about 1 hour
+about {{count}} hours
+1 hour
+{{count}} hours
+1 day
+{{count}} days
+about 1 week
+about {{count}} weeks
+1 week
+{{count}} weeks
+about 1 month
+about {{count}} months
+1 month
+{{count}} months
+about 1 year
+about {{count}} years
+1 year
+{{count}} years
+over 1 year
+over {{count}} years
+almost 1 year
+almost {{count}} years
+{{count}}
+EEEE, MMMM do, y
+MMMM do, y
+MMM d, y
+MM/dd/yyyy
+h:mm:ss a zzzz
+h:mm:ss a z
+h:mm:ss a
+h:mm a
+{{date}} 'at' {{time}}
+{{date}}, {{time}}
+last' eeee 'at' p
+yesterday at' p
+today at' p
+tomorrow at' p
+eeee 'at' p
+standalone
+formatting
+Before Christ
+Anno Domini
+1st quarter
+2nd quarter
+3rd quarter
+4th quarter
+January
+February
+March
+April
+August
+September
+October
+November
+December
+Sunday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+morning
+afternoon
+evening
+night
+midnight
+in the morning
+in the afternoon
+in the evening
+at night
+en-US
+aaaaa
+abbreviated
+GGGGG
+narrow
+quarter
+QQQQQ
+qqqqq
+month
+MMMMM
+LLLLL
+dayOfYear
+EEEEE
+EEEEEE
+short
+eeeee
+eeeeee
+ccccc
+cccccc
+iiiii
+iiiiii
+bbbbb
+BBBBB
+minute
+second
+XXXXX
+xxxxx
+{{date}}
+{{time}}
+years
+days of the month
+Use \`${t.toLowerCase()}\` instead of \`${t}\` (in \`${s}\`) for formatting ${r} to the input \`${a}\`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+|$)|./g,Sr=/P+p+|P+|p+|
+([^]*?)
+Invalid time value
+Format string contains an unescaped latin alphabet character 
+menos de um segundo
+menos de {{count}} segundos
+1 segundo
+{{count}} segundos
+meio minuto
+menos de um minuto
+menos de {{count}} minutos
+1 minuto
+{{count}} minutos
+cerca de 1 hora
+cerca de {{count}} horas
+1 hora
+{{count}} horas
+1 dia
+{{count}} dias
+cerca de 1 semana
+cerca de {{count}} semanas
+1 semana
+{{count}} semanas
+cerca de 1 mês
+cerca de {{count}} meses
+1 mês
+{{count}} meses
+cerca de 1 ano
+cerca de {{count}} anos
+1 ano
+{{count}} anos
+mais de 1 ano
+mais de {{count}} anos
+quase 1 ano
+quase {{count}} anos
+EEEE, d 'de' MMMM 'de' y
+d 'de' MMMM 'de' y
+d MMM y
+dd/MM/yyyy
+HH:mm:ss zzzz
+HH:mm:ss z
+HH:mm:ss
+HH:mm
+{{date}} 'às' {{time}}
+último
+última
+ eeee 'às' p
+ontem às' p
+hoje às' p
+amanhã às' p
+eeee 'às' p
+antes de cristo
+depois de cristo
+1º trimestre
+2º trimestre
+3º trimestre
+4º trimestre
+janeiro
+fevereiro
+março
+abril
+junho
+julho
+agosto
+setembro
+outubro
+novembro
+dezembro
+domingo
+segunda
+terça
+quarta
+quinta
+sexta
+sábado
+segunda-feira
+terça-feira
+quarta-feira
+quinta-feira
+sexta-feira
+manhã
+tarde
+noite
+meia-noite
+meio-dia
+da manhã
+da tarde
+da noite
+pt-BR
+dd 'de' MMMM
+decidida
+Eu sei que consigo!
+disposta
+Estou disposta a tentar algo novo!
+insegura
+Ainda sinto insegurança, mas quero mudar!
+Quão confiante você está em entrar em forma até o dia
+Aguarde, estamos criando seu plano personalizado
+${a}%
+mt-6 animate-fade-in rounded-2xl overflow-hidden
+Transformação
+Resultados reais de usuárias do programa.
+Digite seu e-mail
+Desbloqueie o acesso ao seu plano de Calistenia Asiática Atlas
+email
+Respeitamos sua privacidade e levamos sua proteção muito a sério - sem spam.
+Política de privacidade
+5 milhões mulheres já aderiram
+Obter meu plano
+Autoestima e confiança corporal.
+Vitalidade máxima e fim do cansaço metabólico.
+Redução de medidas e ajuste perfeito das roupas.
+Recuperação abdominal e tônus pós-gestação.
+Transformação estética e saúde metabólica.
+Sua mentalidade forte acelerará a ativação das fibras profundas. Sua primeira grande transformação está prevista para o dia ${u}.
+O Protocolo foi ajustado para garantir sua constância. Você atingirá o pico de queima metabólica até o dia ${u}.
+Não se preocupe, o método é simples e sem impacto. Sua nova versão começará a ser visível no dia ${u}.
+Sua transformação está prevista para o dia ${u}.
+Seu plano de Calistenia Asiática Atlas está 
+Quase
+ pronto!
+Agora
+Seu objetivo
+Antes
+Depois
+grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-border
+Peso atual
+Gordura corporal
+Acima do normal
+Nível de treino de calistenia
+Peso desejado
+Normal
+space-y-3 mb-6
+Foco do Protocolo:
+🧘 Método 
+sem impacto
+ — seguro para qualquer idade e condição física
+fixed bottom-0 left-0 right-0 p-4 z-50
+CONTINUAR
+offer_revealed
+?${x}
+utm_querystring
+${x}${T}
+vturb-container
+vturb-smartplayer
+vid-69cd7dd6181cf0419855d464
+display:block;margin:0 auto;width:100%;max-width:400px;
+script[src*="69cd7dd6181cf0419855d464"]
+script
+Ativação das Fibras Profundas
+o segredo asiático para destravar o metabolismo e queimar gordura de verdade, sem precisar se matar na academia.
+Cronograma "Barriga Chapada" em 21 Dias
+um passo a passo diário e direto ao ponto para você saber exatamente o que fazer até o dia ${p}.
+Guia de Alimentação Metabólica
+receitas práticas e gostosas para acelerar a queima de gordura enquanto você descansa.
+Recuperação e Alívio Articular
+exercícios suaves e sem impacto feitos para fortalecer suas articulações e eliminar dores enquanto você elimina peso.
+Protocolo de Tônus e Definição
+foco total em deixar o corpo durinho, aumentar a flexibilidade e conquistar a tão sonhada barriga chapada.
+Explosão de Vitalidade
+técnicas de ativação que combatem o cansaço constante e devolvem sua disposição logo nos primeiros dias.
+Rotinas de Alta Performance
+treinos rápidos de 10 a 20 minutos que se encaixam na sua correria para manter o metabolismo acelerado o dia todo.
+exercicios
+Quais exercícios a Calistenia inclui?
+Os exercícios de Calistenia se concentram em usar o peso do próprio corpo para ganhar força e flexibilidade, incluindo variações de agachamentos, pranchas, flexões adaptadas e movimentos de mobilidade.
+programa
+Como vou descobrir qual programa é ideal para mim?
+Nosso quiz personalizado analisa suas respostas e cria um programa sob medida para suas necessidades, considerando sua idade, objetivos e limitações físicas.
+acesso
+Como posso acessar meu plano?
+Após a compra, você receberá acesso imediato ao seu plano personalizado através do nosso aplicativo ou plataforma web.
+min-h-screen bg-background ${j?"pt-10":""}
+Oferta expira em:
+Seu plano de Calistenia Asiática está pronto!
+Assista ao vídeo abaixo para entender como funciona...
+mb-6 flex justify-center
+overflow-hidden rounded-2xl
+250px
+400px
+_blank
+noopener noreferrer
+Obter meu plano personalizado agora
+Restam apenas 
+ vagas
+O que você vai receber
+Aplicativo Calistenia Asiática Atlas
+Desconto válido apenas hoje, 
+Pagamento único • Acesso completo ao programa
+🔒 Compra 100% Segura • 30 Dias de Garantia Incondicional
+Resultados que nos deixam orgulhosos
+space-y-4
+Transformação de Beatriz
+Beatriz: -3kg e Corpo Tonificado em 21 dias
+Eu não estava muito acima do peso, mas meu corpo não tinha forma nenhuma e eu me sentia 'mole'. Com a Calistenia Asiática, a ativação das fibras profundas esculpiu meu corpo. Em 21 dias, perdi 3kg de gordura e minha barriga ficou durinha. Meu corpo finalmente ganhou desenho e me sinto muito mais firme e segura.
+Transformação de Carla
+Carla: -13kg em 21 dias
+Eu estava perdida, sem energia e com muita vergonha do meu corpo. Achava que precisaria de horas na academia, mas a Calistenia Asiática mudou tudo. Redescobri minha força treinando no meu próprio quarto. Hoje me sinto empoderada, confiante e 13kg mais leve em apenas 3 semanas. Foi a melhor decisão que tomei!
+Transformação de Fernanda
+Fernanda: -4kg em 14 dias
+Sempre fui desconfiada com promessas rápidas, mas as fotos não mentem. Em apenas duas semanas, a ativação das fibras profundas 'sugou' minha barriga para dentro de um jeito que abdominal nenhum fez. Perdi 4kg muito rápido e o inchaço sumiu. Se em 14 dias estou assim, imagina no final do protocolo!
+Transformação de Juliana
+Juliana: -8kg em 21 dias (Mãe de 2 filhos)
+Depois da gravidez, essa 'pochete' não saía por nada e minha postura estava horrível. Os movimentos suaves da Calistenia Asiática foram a minha salvação. Recuperei minha postura e eliminei 8kg em 21 dias. Finalmente estou vendo minha barriga ficar retinha de novo, sem precisar de impacto.
++Bônus Exclusivos
+Além de você ter acesso às aulas e ao seu plano personalizado, separamos diversos bônus para te ajudar a acelerar o seu processo de emagrecimento rápido:
+space-y-5
+1. Chá Asiático Anticelulite
+ - Misture uma planta pouco conhecida com água morna para assistir às celulites sumindo dia após dia.
+2. Dieta 100% Personalizada
+ - Você terá acesso a diversas receitas para preparar e ver a gordura indo embora muito mais rápido.
+3. Cronograma de Alimentação Inteligente
+ - O passo a passo completo para manter seu metabolismo acelerado e sua reeducação alimentar.
+4. Suporte 24h Todos os Dias
+ - Nosso time estará pronto para te ajudar com qualquer dúvida, independente do horário.
+Selo de Garantia 30 Dias
+30 Dias de Garantia Incondicional
+Nós confiamos tanto nos resultados do Protocolo de Calistenia Asiática que o risco é todo nosso.
+Você tem 30 dias inteiros para testar o aplicativo e todos os bônus. Se por qualquer motivo você não estiver 100% satisfeita, nós devolveremos todo o seu investimento.
+Reembolso total e imediato, sem perguntas e sem complicações.
+Perguntas frequentes
+space-y-2
+Termos de Serviço
+Política de Privacidade

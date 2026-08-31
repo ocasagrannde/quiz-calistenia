@@ -1,0 +1,325 @@
+Ko=({
+onBack:t,currentWeight:s,targetWeight:a,height:r,motivationReal:o,commitmentLevel:n,energyLevel:l,hasLimitations:i}
+)=>{
+const[d,m]=h.useState(null),[c,u]=h.useState({
+minutes:10,seconds:0}
+),[f,N]=h.useState(7),[j,w]=h.useState(()=>localStorage.getItem("offer_revealed")==="true");
+h.useEffect(()=>{
+if(j)return;
+const x=setTimeout(()=>{
+w(!0),localStorage.setItem("offer_revealed","true")}
+,323e3);
+return()=>clearTimeout(x)}
+,[j]);
+const y=x=>x?x.startsWith("?")?x:`?${
+x}
+`:"",E=(()=>{
+const x="https://lastlink.com/p/C680AA305/checkout-payment/",T=y(localStorage.getItem("utm_querystring"));
+return`${
+x}
+${
+T}
+`}
+)();
+h.useEffect(()=>{
+const T=document.getElementById("vturb-container");
+if(!T)return;
+const L=document.createElement("vturb-smartplayer");
+L.id="vid-69cd7dd6181cf0419855d464",L.style.cssText="display:block;
+margin:0 auto;
+width:100%;
+max-width:400px;
+",T.appendChild(L);
+const de=setTimeout(()=>{
+if(!document.querySelector('script[src*="69cd7dd6181cf0419855d464"]')){
+const Z=document.createElement("script");
+Z.src="https://scripts.converteai.net/e6e99317-bea5-4278-a04d-e7732bc0fcb1/players/69cd7dd6181cf0419855d464/v4/player.js",Z.async=!0,document.head.appendChild(Z)}
+}
+,100);
+return()=>{
+clearTimeout(de),T&&(T.innerHTML="");
+const V=document.querySelector('script[src*="69cd7dd6181cf0419855d464"]');
+V&&V.remove()}
+}
+,[]),h.useEffect(()=>{
+if(!j)return;
+const x=setInterval(()=>{
+u(T=>T.minutes===0&&T.seconds===0?(clearInterval(x),T):T.seconds===0?{
+minutes:T.minutes-1,seconds:59}
+:{
+...T,seconds:T.seconds-1}
+)}
+,1e3);
+return()=>clearInterval(x)}
+,[j]),h.useEffect(()=>{
+const x=Math.floor(Math.random()*45001)+45e3,T=setTimeout(()=>{
+N(L=>Math.max(L-1,6))}
+,x);
+return()=>clearTimeout(T)}
+,[]);
+const D=r/100,z=s/(D*D),W=ye(new Date,21),p=ne(W,"dd 'de' MMMM",{
+locale:je}
+),S=297,q=37.9,B=(()=>{
+const x=[];
+return x.push({
+title:"Ativação das Fibras Profundas",description:"o segredo asiático para destravar o metabolismo e queimar gordura de verdade, sem precisar se matar na academia."}
+),x.push({
+title:'Cronograma "Barriga Chapada" em 21 Dias',description:`um passo a passo diário e direto ao ponto para você saber exatamente o que fazer até o dia ${
+p}
+.`}
+),x.push({
+title:"Guia de Alimentação Metabólica",description:"receitas práticas e gostosas para acelerar a queima de gordura enquanto você descansa."}
+),z>25||i?x.push({
+title:"Recuperação e Alívio Articular",description:"exercícios suaves e sem impacto feitos para fortalecer suas articulações e eliminar dores enquanto você elimina peso."}
+):x.push({
+title:"Protocolo de Tônus e Definição",description:"foco total em deixar o corpo durinho, aumentar a flexibilidade e conquistar a tão sonhada barriga chapada."}
+),l==="baixo"||l==="queda"?x.push({
+title:"Explosão de Vitalidade",description:"técnicas de ativação que combatem o cansaço constante e devolvem sua disposição logo nos primeiros dias."}
+):x.push({
+title:"Rotinas de Alta Performance",description:"treinos rápidos de 10 a 20 minutos que se encaixam na sua correria para manter o metabolismo acelerado o dia todo."}
+),x}
+)(),I=[{
+id:"exercicios",question:"Quais exercícios a Calistenia inclui?",answer:"Os exercícios de Calistenia se concentram em usar o peso do próprio corpo para ganhar força e flexibilidade, incluindo variações de agachamentos, pranchas, flexões adaptadas e movimentos de mobilidade."}
+,{
+id:"programa",question:"Como vou descobrir qual programa é ideal para mim?",answer:"Nosso quiz personalizado analisa suas respostas e cria um programa sob medida para suas necessidades, considerando sua idade, objetivos e limitações físicas."}
+,{
+id:"acesso",question:"Como posso acessar meu plano?",answer:"Após a compra, você receberá acesso imediato ao seu plano personalizado através do nosso aplicativo ou plataforma web."}
+];
+return e.jsxs("div",{
+className:`min-h-screen bg-background ${
+j?"pt-10":""}
+`,children:[j&&e.jsxs("div",{
+className:"animate-fade-in bg-primary text-primary-foreground py-2 px-4 flex items-center justify-center gap-2 fixed top-0 left-0 right-0 z-50",children:[e.jsx("span",{
+className:"text-sm",children:"Oferta expira em:"}
+),e.jsxs("span",{
+className:"font-bold",children:[String(c.minutes).padStart(2,"0"),":",String(c.seconds).padStart(2,"0")]}
+)]}
+),e.jsx(Be,{
+showBack:!0,onBack:t}
+),e.jsx("main",{
+className:"px-4 py-6",children:e.jsxs("div",{
+className:"max-w-md mx-auto",children:[e.jsx("h1",{
+className:"text-2xl md:text-3xl font-bold text-primary mb-2 text-center",children:"Seu plano de Calistenia Asiática está pronto!"}
+),e.jsx("p",{
+className:"text-sm md:text-base text-muted-foreground mb-6 text-center",children:"Assista ao vídeo abaixo para entender como funciona..."}
+),e.jsx("div",{
+className:"mb-6 flex justify-center",children:e.jsx("div",{
+id:"vturb-container",className:"overflow-hidden rounded-2xl",style:{
+minHeight:"250px",width:"100%",maxWidth:"400px"}
+}
+)}
+),j&&e.jsxs("div",{
+className:"animate-fade-in",children:[e.jsx("a",{
+href:E,target:"_blank",rel:"noopener noreferrer",className:"w-full bg-primary text-primary-foreground py-4 px-6 rounded-xl font-bold text-lg mb-3 hover:bg-primary/90 transition-colors block text-center animate-pulse-shadow",children:"Obter meu plano personalizado agora"}
+),e.jsxs("div",{
+className:"flex items-center justify-center gap-2 mb-6",children:[e.jsx(ce,{
+className:"w-4 h-4 text-orange-500"}
+),e.jsxs("span",{
+className:"text-sm font-semibold text-orange-600",children:["Restam apenas ",f," vagas"]}
+)]}
+),e.jsxs("div",{
+className:"bg-card rounded-xl p-5 mb-6 quiz-shadow",children:[e.jsx("h2",{
+className:"text-sm font-bold text-foreground mb-4 text-center",children:"O que você vai receber"}
+),e.jsx("div",{
+className:"space-y-3",children:B.map((x,T)=>e.jsxs("div",{
+className:"flex items-start gap-2",children:[e.jsx("div",{
+className:"w-5 h-5 rounded-md bg-quiz-green flex items-center justify-center flex-shrink-0 mt-0.5",children:e.jsx(Qe,{
+className:"w-3 h-3 text-white"}
+)}
+),e.jsxs("div",{
+className:"text-sm",children:[e.jsxs("span",{
+className:"font-bold text-foreground",children:[x.title,":"]}
+)," ",e.jsx("span",{
+className:"text-muted-foreground",children:x.description}
+)]}
+)]}
+,T))}
+),e.jsx("div",{
+className:"mt-6",children:e.jsx("img",{
+src:oo,alt:"Aplicativo Calistenia Asiática Atlas",className:"w-full rounded-2xl",loading:"eager",decoding:"async"}
+)}
+)]}
+),e.jsxs("div",{
+className:"bg-card rounded-xl p-5 mb-6 quiz-shadow border-2 border-primary",children:[e.jsxs("div",{
+className:"flex items-center justify-center gap-2 mb-3",children:[e.jsx(ce,{
+className:"w-4 h-4 text-orange-500"}
+),e.jsxs("span",{
+className:"text-sm font-semibold text-orange-600",children:["Restam apenas ",f," vagas"]}
+)]}
+),e.jsxs("div",{
+className:"text-center space-y-1",children:[e.jsxs("p",{
+className:"text-xl text-muted-foreground",children:["De ",e.jsxs("span",{
+className:"line-through",children:["R$",S.toFixed(2).replace(".",",")]}
+)]}
+),e.jsxs("p",{
+className:"text-xl text-muted-foreground",children:["por ",e.jsxs("span",{
+className:"text-6xl font-black text-primary",children:["R$",q.toFixed(2).replace(".",",")]}
+)]}
+),e.jsxs("p",{
+className:"text-sm text-primary font-semibold pt-2",children:["Desconto válido apenas hoje, ",ne(new Date,"dd/MM/yyyy")]}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground pt-1",children:"Pagamento único • Acesso completo ao programa"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground pt-2 font-medium",children:"🔒 Compra 100% Segura • 30 Dias de Garantia Incondicional"}
+)]}
+)]}
+),e.jsx("a",{
+href:E,target:"_blank",rel:"noopener noreferrer",className:"w-full bg-primary text-primary-foreground py-4 px-6 rounded-xl font-bold text-lg mb-6 hover:bg-primary/90 transition-colors block text-center animate-pulse-shadow",children:"Obter meu plano personalizado agora"}
+),e.jsxs("div",{
+className:"mb-6",children:[e.jsx("h2",{
+className:"text-xl font-bold text-foreground mb-5 text-center",children:"Resultados que nos deixam orgulhosos"}
+),e.jsxs("div",{
+className:"space-y-4",children:[e.jsxs("div",{
+className:"bg-card rounded-xl overflow-hidden quiz-shadow",children:[e.jsx("img",{
+src:oa,alt:"Transformação de Beatriz",className:"w-full object-contain"}
+),e.jsxs("div",{
+className:"p-4",children:[e.jsx("p",{
+className:"font-bold text-primary mb-2",children:"Beatriz: -3kg e Corpo Tonificado em 21 dias"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground leading-relaxed",children:`"Eu não estava muito acima do peso, mas meu corpo não tinha forma nenhuma e eu me sentia 'mole'. Com a Calistenia Asiática, a ativação das fibras profundas esculpiu meu corpo. Em 21 dias, perdi 3kg de gordura e minha barriga ficou durinha. Meu corpo finalmente ganhou desenho e me sinto muito mais firme e segura."`}
+)]}
+)]}
+),e.jsxs("div",{
+className:"bg-card rounded-xl overflow-hidden quiz-shadow",children:[e.jsx("img",{
+src:na,alt:"Transformação de Carla",className:"w-full object-contain"}
+),e.jsxs("div",{
+className:"p-4",children:[e.jsx("p",{
+className:"font-bold text-primary mb-2",children:"Carla: -13kg em 21 dias"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground leading-relaxed",children:'"Eu estava perdida, sem energia e com muita vergonha do meu corpo. Achava que precisaria de horas na academia, mas a Calistenia Asiática mudou tudo. Redescobri minha força treinando no meu próprio quarto. Hoje me sinto empoderada, confiante e 13kg mais leve em apenas 3 semanas. Foi a melhor decisão que tomei!"'}
+)]}
+)]}
+),e.jsxs("div",{
+className:"bg-card rounded-xl overflow-hidden quiz-shadow",children:[e.jsx("img",{
+src:ia,alt:"Transformação de Fernanda",className:"w-full object-contain"}
+),e.jsxs("div",{
+className:"p-4",children:[e.jsx("p",{
+className:"font-bold text-primary mb-2",children:"Fernanda: -4kg em 14 dias"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground leading-relaxed",children:`"Sempre fui desconfiada com promessas rápidas, mas as fotos não mentem. Em apenas duas semanas, a ativação das fibras profundas 'sugou' minha barriga para dentro de um jeito que abdominal nenhum fez. Perdi 4kg muito rápido e o inchaço sumiu. Se em 14 dias estou assim, imagina no final do protocolo!"`}
+)]}
+)]}
+),e.jsxs("div",{
+className:"bg-card rounded-xl overflow-hidden quiz-shadow",children:[e.jsx("img",{
+src:la,alt:"Transformação de Juliana",className:"w-full object-contain"}
+),e.jsxs("div",{
+className:"p-4",children:[e.jsx("p",{
+className:"font-bold text-primary mb-2",children:"Juliana: -8kg em 21 dias (Mãe de 2 filhos)"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground leading-relaxed",children:`"Depois da gravidez, essa 'pochete' não saía por nada e minha postura estava horrível. Os movimentos suaves da Calistenia Asiática foram a minha salvação. Recuperei minha postura e eliminei 8kg em 21 dias. Finalmente estou vendo minha barriga ficar retinha de novo, sem precisar de impacto."`}
+)]}
+)]}
+)]}
+)]}
+),e.jsxs("div",{
+className:"bg-card rounded-xl p-5 mb-6 quiz-shadow border-2 border-primary",children:[e.jsxs("div",{
+className:"flex items-center justify-center gap-2 mb-3",children:[e.jsx(ce,{
+className:"w-4 h-4 text-orange-500"}
+),e.jsxs("span",{
+className:"text-sm font-semibold text-orange-600",children:["Restam apenas ",f," vagas"]}
+)]}
+),e.jsxs("div",{
+className:"text-center space-y-1",children:[e.jsxs("p",{
+className:"text-xl text-muted-foreground",children:["De ",e.jsxs("span",{
+className:"line-through",children:["R$",S.toFixed(2).replace(".",",")]}
+)]}
+),e.jsxs("p",{
+className:"text-xl text-muted-foreground",children:["por ",e.jsxs("span",{
+className:"text-6xl font-black text-primary",children:["R$",q.toFixed(2).replace(".",",")]}
+)]}
+),e.jsxs("p",{
+className:"text-sm text-primary font-semibold pt-2",children:["Desconto válido apenas hoje, ",ne(new Date,"dd/MM/yyyy")]}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground pt-1",children:"Pagamento único • Acesso completo ao programa"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground pt-2 font-medium",children:"🔒 Compra 100% Segura • 30 Dias de Garantia Incondicional"}
+)]}
+)]}
+),e.jsx("a",{
+href:E,target:"_blank",rel:"noopener noreferrer",className:"w-full bg-primary text-primary-foreground py-4 px-6 rounded-xl font-bold text-lg mb-6 hover:bg-primary/90 transition-colors block text-center animate-pulse-shadow",children:"Obter meu plano personalizado agora"}
+),e.jsxs("div",{
+className:"bg-card rounded-xl p-5 mb-6 quiz-shadow",children:[e.jsx("h2",{
+className:"text-2xl font-bold text-primary mb-3 text-center",children:"+Bônus Exclusivos"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground text-center mb-6",children:"Além de você ter acesso às aulas e ao seu plano personalizado, separamos diversos bônus para te ajudar a acelerar o seu processo de emagrecimento rápido:"}
+),e.jsxs("div",{
+className:"space-y-5",children:[e.jsx("div",{
+children:e.jsxs("p",{
+className:"text-foreground",children:[e.jsx("span",{
+className:"font-bold text-primary",children:"1. Chá Asiático Anticelulite"}
+)," - Misture uma planta pouco conhecida com água morna para assistir às celulites sumindo dia após dia."]}
+)}
+),e.jsx("div",{
+children:e.jsxs("p",{
+className:"text-foreground",children:[e.jsx("span",{
+className:"font-bold text-primary",children:"2. Dieta 100% Personalizada"}
+)," - Você terá acesso a diversas receitas para preparar e ver a gordura indo embora muito mais rápido."]}
+)}
+),e.jsx("div",{
+children:e.jsxs("p",{
+className:"text-foreground",children:[e.jsx("span",{
+className:"font-bold text-primary",children:"3. Cronograma de Alimentação Inteligente"}
+)," - O passo a passo completo para manter seu metabolismo acelerado e sua reeducação alimentar."]}
+)}
+),e.jsx("div",{
+children:e.jsxs("p",{
+className:"text-foreground",children:[e.jsx("span",{
+className:"font-bold text-primary",children:"4. Suporte 24h Todos os Dias"}
+)," - Nosso time estará pronto para te ajudar com qualquer dúvida, independente do horário."]}
+)}
+)]}
+)]}
+),e.jsxs("div",{
+className:"bg-card rounded-xl p-5 mb-6 quiz-shadow border border-border",children:[e.jsx("div",{
+className:"flex justify-center mb-4",children:e.jsx("img",{
+src:da,alt:"Selo de Garantia 30 Dias",className:"w-32 h-32 object-contain"}
+)}
+),e.jsx("h3",{
+className:"text-xl font-bold text-foreground text-center mb-3",children:"30 Dias de Garantia Incondicional"}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground text-center mb-3",children:"Nós confiamos tanto nos resultados do Protocolo de Calistenia Asiática que o risco é todo nosso."}
+),e.jsx("p",{
+className:"text-sm text-muted-foreground text-center mb-3",children:"Você tem 30 dias inteiros para testar o aplicativo e todos os bônus. Se por qualquer motivo você não estiver 100% satisfeita, nós devolveremos todo o seu investimento."}
+),e.jsx("p",{
+className:"text-sm text-foreground text-center font-semibold",children:"Reembolso total e imediato, sem perguntas e sem complicações."}
+)]}
+),e.jsxs("div",{
+className:"mb-6",children:[e.jsx("h2",{
+className:"font-bold text-foreground mb-4",children:"Perguntas frequentes"}
+),e.jsx("div",{
+className:"space-y-2",children:I.map(x=>e.jsxs("div",{
+className:"bg-card rounded-xl overflow-hidden quiz-shadow",children:[e.jsxs("button",{
+onClick:()=>m(d===x.id?null:x.id),className:"w-full p-4 flex items-center justify-between text-left",children:[e.jsx("span",{
+className:"font-medium text-foreground text-sm",children:x.question}
+),d===x.id?e.jsx(Ka,{
+className:"w-5 h-5 text-muted-foreground flex-shrink-0"}
+):e.jsx(Za,{
+className:"w-5 h-5 text-muted-foreground flex-shrink-0"}
+)]}
+),d===x.id&&e.jsx("div",{
+className:"px-4 pb-4",children:e.jsx("p",{
+className:"text-sm text-muted-foreground",children:x.answer}
+)}
+)]}
+,x.id))}
+)]}
+),e.jsx("a",{
+href:E,target:"_blank",rel:"noopener noreferrer",className:"w-full bg-primary text-primary-foreground py-4 px-6 rounded-xl font-bold text-lg mb-4 hover:bg-primary/90 transition-colors block text-center animate-pulse-shadow",children:"Obter meu plano personalizado agora"}
+),e.jsxs("p",{
+className:"text-xs text-muted-foreground text-center",children:[e.jsx("a",{
+href:"#",className:"underline",children:"Termos de Serviço"}
+)," e"," ",e.jsx("a",{
+href:"#",className:"underline",children:"Política de Privacidade"}
+)]}
+)]}
+)]}
+)}
+)]}
+)}
+;
+export{
+So as Step12Limitations,Mo as Step13Comfort,Co as Step14Encouragement,Po as Step15Height,Ao as Step16CurrentWeight,Eo as Step17TargetWeight,zo as Step18Age,an as Step1Age,Oo as Step20Lifestyle,Do as Step21Symptoms,Io as Step23ProfileReady,Ro as Step24Activities,Lo as Step25PreparingPlan,$o as Step26Hydration,Fo as Step27Diet,Xo as Step28Habits,Ho as Step29LifeEvents,uo as Step2SocialProof,Vo as Step30Motivation,Go as Step31Projection,Uo as Step32Loading,Zo as Step33Email,Ko as Step34Offer,xo as Step3CalistheniaExperience,fo as Step3MainGoal,go as Step4AdditionalGoals,po as Step4Nao,ho as Step4Sim,vo as Step5BodyZones,yo as Step5bTargetZones,jo as Step6Education,wo as Step7BodyType,No as Step8DreamBody,ko as Step9FitnessHistory,Qo as StepCommitmentDate,Bo as StepEatingHabits,Wo as StepMealPreferences,Yo as StepMotivationReal,Jo as StepPlanSummary,To as StepSleep,_o as StepTransformation,qo as StepWater}
+;
+
+
+
