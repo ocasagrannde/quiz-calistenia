@@ -24,7 +24,7 @@
   </script>
 
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=20260831v7" />
+  <link rel="stylesheet" href="css/style.css?v=20260831v10" />
 </head>
 <body>
 
@@ -37,8 +37,8 @@
   <!-- Site Header Component -->
   <header class="site-header" id="headerContainer">
     <div class="header-container">
-      <button class="btn-back" id="btnBackHeader" aria-label="Voltar etapa" style="display: none;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <button class="btn-back" id="btnBackHeader" aria-label="Voltar etapa" style="visibility: hidden;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
@@ -46,13 +46,16 @@
       <a href="#" class="header-logo-group">
         <span class="logo-text">CALISTENIA</span>
       </a>
-    </div>
-    
-    <!-- Animated Progress Bar -->
-    <div class="progress-container">
-      <div class="progress-bar-fill" id="progressBarFill"></div>
+
+      <!-- Espaçador para manter o logo 100% centralizado -->
+      <div class="header-right-spacer"></div>
     </div>
   </header>
+
+  <!-- Barra de progresso rosa: linha divisória entre CALISTENIA e o título das perguntas -->
+  <div class="progress-wrapper" id="headerProgressBarContainer">
+    <div class="progress-bar-fill" id="progressBarFill"></div>
+  </div>
 
   <!-- Main Viewport -->
   <main class="app-viewport">
@@ -1314,8 +1317,8 @@
       <!-- Video Player Container (Pronto para colar o seu código de iframe ou player) -->
       <div class="mb-4" style="width: 100%; max-width: 400px; margin: 0 auto 1.5rem auto;">
         <div id="vturb-container">
-          <!-- Cole seu código iframe aqui -->
-          <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" title="Vídeo de Apresentação" allowfullscreen></iframe>
+          <vturb-smartplayer id="vid-6a9618c1c60bbe3a8d3df5db" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 178.21782178217822% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+          <script type="text/javascript">var s=document.createElement("script");s.src="https://scripts.converteai.net/674580a5-6c80-48c0-a57e-3ca529b2acfe/players/6a9618c1c60bbe3a8d3df5db/v4/player.js",s.async=!0,document.head.appendChild(s);</script>
         </div>
       </div>
 
@@ -1525,6 +1528,6 @@
 
 
   <!-- Quiz Engine JavaScript -->
-  <script src="js/quiz.js?v=20260831v7"></script>
+  <script src="js/quiz.js?v=20260831v10"></script>
 </body>
 </html>
