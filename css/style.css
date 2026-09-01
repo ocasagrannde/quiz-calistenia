@@ -53,87 +53,103 @@ html, body {
   z-index: 100;
   background: #ffffff;
   width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  padding: 0.85rem 1rem 0.5rem 1rem;
-  position: relative;
+  max-width: 480px;
   margin: 0 auto;
-  text-align: center;
+  padding: 0.75rem 1rem 0.65rem 1rem;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .header-logo-group {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.45rem;
   text-decoration: none;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .logo-text {
   font-family: var(--font-heading);
   color: var(--primary);
-  font-size: 2.2rem;
+  font-size: 1.95rem;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: center;
-  margin: 0 auto;
+}
+
+.header-badge-by {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
 }
 
 .btn-back {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
   background: none;
   border: none;
   color: var(--foreground);
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s;
-  z-index: 10;
+  flex-shrink: 0;
 }
 
 .btn-back:hover {
   background: var(--muted);
 }
 
-/* Progress Bar (Alinhada no canto esquerdo da estrutura do quiz: 0px) */
-.progress-container {
+.header-right-spacer {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+/* Barra de Progresso Rosa (Linha divisória entre CALISTENIA e o conteúdo)
+   Elemento independente posicionado entre o header e o main.
+   Inicia do canto esquerdo absoluto da tela (left: 0, sem max-width). */
+.progress-wrapper {
+  position: sticky;
+  top: 52px; /* Altura do header para colar logo abaixo dele */
+  z-index: 99;
   width: 100%;
-  height: 4px;
-  background: #e5e7eb;
-  position: relative;
+  height: 3.5px;
+  background: #e8ecf1;
   overflow: hidden;
   margin: 0;
   padding: 0;
-  display: block;
 }
 
-.progress-bar-fill {
+.progress-wrapper .progress-bar-fill {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   height: 100%;
   background-color: var(--primary);
-  width: 3.33%;
-  transition: width 0.35s ease;
-  margin: 0;
-  padding: 0;
-  border-radius: 0 2px 2px 0;
+  width: 0%;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* App Main Container */
@@ -610,8 +626,8 @@ html, body {
 
 /* Fixed Bottom Continue Button Bar */
 .fixed-bottom-spacer {
-  height: 90px;
-  min-height: 90px;
+  height: 110px;
+  min-height: 110px;
   width: 100%;
   flex-shrink: 0;
   pointer-events: none;
@@ -623,27 +639,34 @@ html, body {
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
-  padding: 0.5rem 1.25rem 1.25rem 1.25rem !important;
-  background: transparent !important;
+  padding: 0.85rem 1.25rem calc(0.85rem + env(safe-area-inset-bottom, 0px)) 1.25rem !important;
+  background: #ffffff !important;
+  border-top: 1px solid #f1f5f9 !important;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06) !important;
   display: flex !important;
   justify-content: center !important;
   z-index: 9999 !important;
-  pointer-events: none !important;
+  pointer-events: auto !important;
 }
 
 .btn-fixed-action {
   max-width: 440px !important;
   width: 100% !important;
   pointer-events: none;
-  opacity: 0.45;
+  background-color: #f6a5bd !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .btn-fixed-action.active {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
   opacity: 1 !important;
   pointer-events: auto !important;
-  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35) !important;
+  box-shadow: 0 6px 20px rgba(209, 71, 117, 0.35) !important;
+  cursor: pointer;
 }
 
 /* Grid Option Cards (Image + Text) */

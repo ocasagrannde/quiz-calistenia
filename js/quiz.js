@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DOM Elements
   const progressBarFill = document.getElementById('progressBarFill');
+  const headerProgressBarContainer = document.getElementById('headerProgressBarContainer');
   const btnBackHeader = document.getElementById('btnBackHeader');
   const headerContainer = document.getElementById('headerContainer');
   const vslTopTimerBar = document.getElementById('vslTopTimerBar');
@@ -47,7 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdownTimer();
   updateTodayDiscountDate();
   update21DaysTargetDates();
-  updateProgressBar();
+  updateProgressBar(1);
+
+  // Suporte a abertura direta de etapas via URL (ex: ?step=vsl ou #vsl)
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialStep = urlParams.get('step') || window.location.hash.replace('#', '');
+  if (initialStep) {
+    showStep(initialStep);
+  }
 
   // Navigation Logic
   function initNavigation() {
@@ -69,15 +77,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (planBurnDateEl) planBurnDateEl.textContent = dateFormatted;
   }
 
-  function updateProgressBar() {
+  function updateProgressBar(stepNumber) {
     if (!progressBarFill) return;
-    let stepNum = quizState.currentStep;
-    if (typeof stepNum === 'string') {
-      stepNum = parseInt(stepNum) || 4;
+    const current = String(stepNumber || quizState.currentStep || '1');
+    const hideOnSteps = ['1', '1b', '2', 'vsl'];
+
+    // Nas etapas 1, 1b e 2, a linha fica limpa (0%). A partir da etapa 3 ela preenche a partir do canto esquerdo da tela
+    if (hideOnSteps.includes(current)) {
+      progressBarFill.style.width = '0%';
+      return;
     }
-    const total = quizState.totalSteps || 30;
-    const percentage = Math.min(100, Math.max(3, Math.round((stepNum / total) * 100)));
-    progressBarFill.style.width = `${percentage}%`;
+
+    const stepProgressOrder = [
+      '3', '4a', '4b', '5', '5b', '6', '7', '8', '9', '10', 
+      '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', 
+      '21', '22', '23', '24', '25', '26', '26b', '26c', '26d', '27', 
+      '28', '29', '30'
+    ];
+
+    let idx = stepProgressOrder.indexOf(current);
+    if (idx === -1) {
+      const num = parseInt(current);
+      if (!isNaN(num) && num > 2) {
+        idx = Math.min(stepProgressOrder.length - 1, num - 3);
+      } else {
+        idx = 0;
+      }
+    }
+
+    // A etapa 3 inicia em ~8% e progride suavemente até 100% no resumo da etapa 30
+    const pct = Math.min(100, Math.round(((idx + 1) / stepProgressOrder.length) * 94) + 6);
+    progressBarFill.style.width = `${pct}%`;
   }
 
   function updateTodayDiscountDate() {
@@ -239,13 +269,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle header & top timer bar on VSL page
     if (stepNumber === 'vsl') {
-      if (btnBackHeader) btnBackHeader.style.display = 'none';
+      if (btnBackHeader) btnBackHeader.style.visibility = 'hidden';
       if (headerContainer) headerContainer.style.display = 'none';
       if (vslTopTimerBar) vslTopTimerBar.style.display = 'flex';
       initVTurbPlayer();
       if (window.posthog) window.posthog.capture('vsl_offer_view');
     } else {
-      if (btnBackHeader) btnBackHeader.style.display = (stepNumber === 1) ? 'none' : 'flex';
+      if (btnBackHeader) btnBackHeader.style.visibility = (stepNumber === 1) ? 'hidden' : 'visible';
       if (headerContainer) headerContainer.style.display = 'flex';
       if (vslTopTimerBar) vslTopTimerBar.style.display = 'none';
     }
@@ -264,14 +294,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    let numericStep = stepNumber;
-    if (typeof stepNumber === 'string') {
-      numericStep = parseInt(stepNumber);
-    }
-    if (!isNaN(numericStep)) {
-      quizState.currentStep = numericStep;
-      updateProgressBar();
-    }
+    quizState.currentStep = stepNumber;
+    updateProgressBar(stepNumber);
   }
 
   function initVTurbPlayer() {
